@@ -5,3 +5,4 @@
 
 
 //---> Sugestões para aplicação: 
+(Obs: Acredito que temos que trabalhar uma lógica tipo de GAME/jogo , tornar viciante a aplicação.).
