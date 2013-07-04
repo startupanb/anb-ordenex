@@ -46,18 +46,6 @@ $this->viewVars['requestJs'] = 'users/cadastro_vendedor';
 		echo $this->Form->input('telefone_comercial', array('type' => 'text'));
 		echo $this->Form->input('telefone_celular', array('type' => 'text'));
 		echo $this->Form->input('site', array('type' => 'text'));
-		
-
-		$options = array('n' => 'Selecione', 0 => 'Não', 1 => 'Sim');
-
-		echo $this->Form->input('Vendedor.loja_fisica', array('label' => 'Possui Loja Fisica?', 'options' => $options, 'default' => 'n'));
-		echo $this->Form->input('Vendedor.retirada_local', array('label' => 'Permite a retirada no local?', 'options' => $options, 'default' => 'n'));
-		echo $this->Form->input('Vendedor.segmentos_id', array('label' => 'Segmento de trabalho', 'options' => $segmentos, 'default' => 0));
-
-		echo $this->Form->input('Referencia.1.nome', array('type' => 'text'));
-		echo $this->Form->input('Referencia.1.telefone_comercial', array('type' => 'text'));
-		echo $this->Form->input('Referencia.2.nome', array('type' => 'text'));
-		echo $this->Form->input('Referencia.2.telefone_comercial', array('type' => 'text'));
 
 		echo $this->Form->input('Enviar', array('type' => 'submit'));
 	echo $this->Form->end();

@@ -11,7 +11,7 @@ class UsersController extends AppController {
 	
 	public function beforeFilter() {
 		parent::beforeFilter();
-		$this->Auth->allow('create', 'contato', 'cadastro_vendedor');
+		$this->Auth->allow('create', 'contato', 'cadastro_vendedor', 'cadastro_comprador');
 	}
 	
 	public function admin_login() {
@@ -99,9 +99,11 @@ class UsersController extends AppController {
 		}
 	}
 
+	#Action que cadastra vendedores dos dois tipos pessoa fisica e juridica
 	public function cadastro_vendedor(){
 		
 		if (!empty($this->request->data)) {
+			debug($this->data);
 			#validação de usuário comum
 			$this->User->set($this->data);
 			if($this->User->validates()){
@@ -118,17 +120,17 @@ class UsersController extends AppController {
 						if($this->PessoaFisica->validates()){
 							// $this->User->hasOne = "PessoaFisica";
 							// $this->PessoaFisica->hasOne = "User";
+								$this->request->data['User']['vendedor'] = 1;
 								if($this->User->save($this->data)){
 
-									$user = $this->_ultimo_cadastro_vendedor();
 									#atribui o id do usuário cadastrado para fazer o relacionamento na tabela pessoa_fisica
-									$this->request->data['PessoaFisica']['usuarios_id'] = $user['User']['id'];
+									$this->request->data['PessoaFisica']['usuarios_id'] = $this->User->id;
 									$this->request->data['Vendedor']['usuarios_id'] = $user['User']['id'];
 
 									if($this->PessoaFisica->save($this->data)){
 										if($this->Vendedor->save($this->data)){
-											echo "Salvou!";		
-											unset($this->request->data);
+											// echo "Salvou!";		
+											
 										}else{
 											debug($this->Vendedor->validationErrors);
 										}																
@@ -137,7 +139,7 @@ class UsersController extends AppController {
 									}
 									
 								}else{
-									echo "Não Salvou!";
+									// echo "Não Salvou!";
 								}
 						}else{
 							#printa os erros de validação na tela, SEMPRE DEIXAR COMENTADO QUANDO NÂO ESTIVER EM USO!!
@@ -151,33 +153,62 @@ class UsersController extends AppController {
 						if($this->PessoaJuridica->validates()){
 							if($this->User->save($this->data)){
 
-								$user = $this->_ultimo_cadastro_vendedor();
-
 								#atribui o id do usuário cadastrado para fazer o relacionamento na tabela pessoa_juridica
-								$this->request->data['PessoaJuridica']['usuarios_id'] = $user['User']['id'];
+								$this->request->data['PessoaJuridica']['usuarios_id'] = $this->User->id;
 								$this->request->data['Vendedor']['usuarios_id'] = $user['User']['id'];
 								
 								if($this->PessoaJuridica->save($this->data)){
-									echo "Salvou2!";	
-									unset($this->request->data);
+									// echo "Salvou2!";	
+									
 								}else{
 									debug($this->User->PessoaJuridica->validationErrors);
+									return false;
 								}
 								
 							}else{
-								echo "Não Salvou2!";
+								// echo "Não Salvou2!";
+								return false;
 							}
 							
 						}else{
 							#printa os erros de validação na tela, SEMPRE DEIXAR COMENTADO QUANDO NÂO ESTIVER EM USO!!
 							debug($this->PessoaJuridica->validationErrors);
+							
 						}
 					}
 
+					#Verifica se o cadastro do vendedor foi executado corretamente
+					if(isset($this->Vendedor->id) && !empty($this->Vendedor->id)){
+						$this->loadModel('Referencia');
+						$this->loadModel('VendedorReferencia');
+						$referencia = array();
+						
+						for($i = 1; $i <= 2; $i++){
+							$referencia['Referencia'] = $this->data['Referencia'][$i];
+							debug($referencia);
+							$this->Referencia->id = null;
+							if(!$this->Referencia->save($referencia)){
+								#printa os erros de validação na tela, SEMPRE DEIXAR COMENTADO QUANDO NÂO ESTIVER EM USO!!
+								debug($this->Referencia->validationErrors);
+								exit;
+							}else{
+								$vendRef = array();
+								$vendRef['VendedorReferencia']['vendedores_id'] = $this->Vendedor->id;
+								$vendRef['VendedorReferencia']['referencias_id'] = $this->Referencia->id;
+								$this->VendedorReferencia->id = null;
+								if(!$this->VendedorReferencia->save($vendRef)){
+									debug($vendRef);
+									debug($this->VendedorReferencia->validationErrors);
+								}
+							}
+						}
+						unset($this->request->data);
+					}
 					
 				}else{
 					#printa os erros de validação na tela, SEMPRE DEIXAR COMENTADO QUANDO NÂO ESTIVER EM USO!!
 					debug($this->Vendedor->validationErrors);
+
 				}
 			}else{
 				#printa os erros de validação na tela, SEMPRE DEIXAR COMENTADO QUANDO NÂO ESTIVER EM USO!!
@@ -200,8 +231,89 @@ class UsersController extends AppController {
 		debug($t);
 	}
 
+	#Action que cadastra compradores
+	public function cadastro_comprador(){
+		if (!empty($this->request->data)) {
+			debug($this->data);
+			#validação de usuário comum
+			$this->User->set($this->data);
+			if($this->User->validates()){
+			
+				if($this->data['User']['pessoa_fisica_juridica'] == 0){
+					
+					// debug($this->data);			
+					#validação de pessoa fisica
+					$this->LoadModel('PessoaFisica');
+					$this->PessoaFisica->set($this->data);
+					if($this->PessoaFisica->validates()){
+						// $this->User->hasOne = "PessoaFisica";
+						// $this->PessoaFisica->hasOne = "User";
+							$this->request->data['User']['comprador'] = 1;
+							if($this->User->save($this->data)){
+
+								
+								#atribui o id do usuário cadastrado para fazer o relacionamento na tabela pessoa_fisica
+								$this->request->data['PessoaFisica']['usuarios_id'] = $this->User->id;
+
+								if($this->PessoaFisica->save($this->data)){
+									echo "salvou";
+								}else{
+									debug($this->User->PessoaFisica->validationErrors);
+								}
+								
+							}else{
+								// echo "Não Salvou!";
+							}
+					}else{
+						#printa os erros de validação na tela, SEMPRE DEIXAR COMENTADO QUANDO NÂO ESTIVER EM USO!!
+						debug($this->PessoaFisica->validationErrors);
+					}	
+				}else{
+	
+					#validação pessoa juridica
+					$this->LoadModel('PessoaJuridica');
+					$this->PessoaJuridica->set($this->data);
+					if($this->PessoaJuridica->validates()){
+						if($this->User->save($this->data)){
+
+							#atribui o id do usuário cadastrado para fazer o relacionamento na tabela pessoa_juridica
+							$this->request->data['PessoaJuridica']['usuarios_id'] = $this->User->id;
+							
+							
+							if($this->PessoaJuridica->save($this->data)){
+								echo "Salvou2!";	
+								
+							}else{
+								debug($this->User->PessoaJuridica->validationErrors);
+								return false;
+							}
+							
+						}else{
+							// echo "Não Salvou2!";
+							return false;
+						}
+						
+					}else{
+						#printa os erros de validação na tela, SEMPRE DEIXAR COMENTADO QUANDO NÂO ESTIVER EM USO!!
+						debug($this->PessoaJuridica->validationErrors);
+						
+					}
+				}
+				
+			}else{
+				#printa os erros de validação na tela, SEMPRE DEIXAR COMENTADO QUANDO NÂO ESTIVER EM USO!!
+				debug($this->User->validationErrors);
+			}
+		}
+	}
+
+
 	#Função que retorna o ultimo usuário cadastrado na base de dados
-	public function _ultimo_cadastro_vendedor(){
+	public function _ultimo_cadastro_usuario(){
 		return $this->User->find('first', array('order' => 'id DESC', 'fields' => array('id')));
+	}
+
+	public function _ultimo_cadastro_vendedor(){
+		return $this->Vendedor->find('first', array('order' => 'id DESC', 'fields' => array('id')));
 	}
 }
