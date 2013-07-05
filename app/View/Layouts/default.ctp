@@ -26,6 +26,10 @@
 	<![endif]-->
 	
 	<?php echo $this->element('header'); ?>
+
+	<?php echo $this->Html->css('style_default'); ?>
+
+
 	
 </head>
 
@@ -35,12 +39,11 @@
 		<p class="chromeframe">You are using an outdated browser. <a href="http://browsehappy.com/">Upgrade your browser today</a> or <a href="http://www.google.com/chromeframe/?redirect=true">install Google Chrome Frame</a> to better experience this site.</p>
 	<![endif]-->
 	
-	<div id="main">
-		
+
 		<header>
-			<hgroup>
-				<h1>Header</h1>
-				<nav class="nav">
+			<div class="centralizer">
+				<img src="logo.png" height="61" width="189" alt="">
+				<nav>
 					<ul>
 						<li class="current"><a href="#">Portfolio</a></li>
 						<li><a href="#">Illustration</a></li>
@@ -49,20 +52,33 @@
 						<li><a href="#">Graphic Design</a></li>
 					</ul>
 				</nav>
-			</hgroup>
+			</div>
 		</header>
+		<div class="clear"></div>
+
+
+
+
+
+
+
+
+
 		
-		<section class="main-content">
-			<div class="wrapper">
+		<section>
+			<div>
 				<?php echo $this->fetch('content'); ?>
 			</div>
+			<div class="clear"></div>
 		</section>
 		
+
+
 		<footer>
 			<h3>Footer</h3>
 		</footer>
 		
-	</main>
+
 	
 	<?php echo $this->element('footer'); ?>
 	<?php echo $this->fetch('script'); ?>

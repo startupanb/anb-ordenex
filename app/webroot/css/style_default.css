@@ -1,0 +1,42 @@
+*{margin: 0; padding: 0;}
+
+.centralizer{ display: block; margin: 0 auto; width: 900px;}
+
+header,footer,section{display: block; width: 100%; }
+
+header{ display: block; float: left; width: 100%; background: #000; }
+header img{ float: left; margin: 10px;}
+header nav{ display: block; float: right; margin-top: 10px;}
+header nav ul{}
+header nav ul li{ display: block; float: left;}
+
+
+#wrapper{ background: #C9FAF7; padding: 40px 0;}
+#wrapper h1{ display: block; width: 100%; text-align: center; margin-bottom: 20px ; font-size: 26px;}
+#formularios,#pessoa_juridica,#pessoa_fisica{ display: none;}
+
+
+/*Efeito FORM*/
+#form_view{ display: block; width: 900px; height: 500px; overflow: hidden;  position: relative;}
+#form_full{ display: block; width: 1800px; height: 500px; position: absolute; left: 0; top: 0;}
+.form_blocos{ display: block; float: left; width: 900px; height: 500px;}
+/*FIM EFEITO FORM*/
+
+
+
+section.box{ display: block; float: left; width: 394px; height: 207px; border:1px solid #000;}
+section.box:last-child{ margin-left: 30px;}
+section.box figure{display: block; float: left; width: 110px;}
+section.box figure img{ margin: 40px 30px;}
+section.box .content_box{ width: 260px; display: block; float: left;}
+section.box .content_box h3{ margin-top: 30px; margin-bottom: 10px;}
+section.box .content_box p{ margin-bottom: 10px;}
+section.box .content_box input[type="button"]{ float: left; }
+
+
+
+footer{ background: #000; color: #fff;}
+
+
+
+.clear{ clear: both;}
