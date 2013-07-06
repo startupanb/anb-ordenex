@@ -1,18 +1,21 @@
-*{margin: 0; padding: 0;}
+*{margin: 0; padding: 0; font-family: 'Muli', sans-serif;}
 
 .centralizer{ display: block; margin: 0 auto; width: 900px;}
 
 header,footer,section{display: block; width: 100%; }
 
-header{ display: block; float: left; width: 100%; background: #000; }
+header{ display: block; float: left; width: 100%; background: #000; box-shadow: 0 0 10px 0 #555; }
 header img{ float: left; margin: 10px;}
-header nav{ display: block; float: right; margin-top: 10px;}
+header nav{ display: block; float: right; margin-top: 30px;}
 header nav ul{}
 header nav ul li{ display: block; float: left;}
+header nav ul li a{color: #fff; margin-left: 10px; text-decoration: none;}
+header nav ul li a:hover{ color:#49943E }
 
 
-#wrapper{ background: #C9FAF7; padding: 40px 0;}
-#wrapper h1{ display: block; width: 100%; text-align: center; margin-bottom: 20px ; font-size: 26px;}
+
+#wrapper{ /*background: #C9FAF7;*/ padding: 40px 0;}
+#wrapper h1{ display: block; width: 100%; text-align: center; margin-bottom: 40px ; font-size: 30px; color:#686C6C; font-weight: 300;}
 #formularios,#pessoa_juridica,#pessoa_fisica{ display: none;}
 
 
@@ -20,17 +23,39 @@ header nav ul li{ display: block; float: left;}
 #form_view{ display: block; width: 900px; height: 500px; overflow: hidden;  position: relative;}
 #form_full{ display: block; width: 1800px; height: 500px; position: absolute; left: 0; top: 0;}
 .form_blocos{ display: block; float: left; width: 900px; height: 500px;}
+.form_blocos .divisao_campos{display: block; width: 300px; float: left;}
+.form_blocos .divisao_campos h4{ display: block; width: 260px; font-size: 20px; color:#686C6C; height: 30px; border-bottom: 1px solid #ccc; font-weight: 300; margin-bottom: 15px; margin-top: 10px;}
+
 /*FIM EFEITO FORM*/
 
 
+.form_blocos .input{ display: block; height: 46px; margin-bottom: 10px; }
+.form_blocos .input label{ margin-right: 20px; font-weight: 400; display: block; margin-top: 4px; font-size: 13px; margin-bottom: 3px; color: #333}
+.form_blocos .input input{  color: #686C6C; padding: 5px; margin-bottom: 20px; width: 200px; }
+.form_blocos .input input{ background: none; -webkit-border-radius: 3px; -moz-border-radius: 3px; border-radius: 3px; border: 1px solid #ccc;}
 
-section.box{ display: block; float: left; width: 394px; height: 207px; border:1px solid #000;}
-section.box:last-child{ margin-left: 30px;}
-section.box figure{display: block; float: left; width: 110px;}
+
+section.box{ display: block; float: left; width: 394px; height: 207px; box-shadow: 0 0 5px #555; background: #fff;}
+section.box:nth-child(2){ margin-left: 26px; margin-right: 52px;}
+
+section.box input[type="button"]{
+	color: #fff;
+	-webkit-border-radius: 3px;
+	-moz-border-radius: 3px;
+	border-radius: 3px;
+}
+
+
+
+/*section.box:last-child{ margin-right: 25px;}*/
+
+
+
+section.box figure{display: block; float: left; width: 110px; margin-top: 33px;}
 section.box figure img{ margin: 40px 30px;}
 section.box .content_box{ width: 260px; display: block; float: left;}
-section.box .content_box h3{ margin-top: 30px; margin-bottom: 10px;}
-section.box .content_box p{ margin-bottom: 10px;}
+section.box .content_box h3{ margin-top: 30px; margin-bottom: 10px; color:#49943E}
+section.box .content_box p{ margin-bottom: 10px; font-size: 15px;}
 section.box .content_box input[type="button"]{ float: left; }
 
 

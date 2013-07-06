@@ -3,6 +3,13 @@
 <!--[if IE 7]>         <html class="no-js lt-ie9 lt-ie8" lang="pt-BR"> <![endif]-->
 <!--[if IE 8]>         <html class="no-js lt-ie9" lang="pt-BR"> <![endif]-->
 <!--[if gt IE 8]><!--> <html class="no-js" lang="pt-BR"> <!--<![endif]-->
+<!--[if gte IE 9]>
+  <style type="text/css">
+    .gradient {
+       filter: none;
+    }
+  </style>
+<![endif]-->
 <head>
 	<?php echo $this->Html->charset(); ?>
 	
@@ -29,7 +36,7 @@
 
 	<?php echo $this->Html->css('style_default'); ?>
 
-
+	<link href='http://fonts.googleapis.com/css?family=Muli:300,400' rel='stylesheet' type='text/css'>
 	
 </head>
 
@@ -42,7 +49,7 @@
 
 		<header>
 			<div class="centralizer">
-				<img src="logo.png" height="61" width="189" alt="">
+				<img src="<?php echo $this->webroot;?>/img/logo.png" />
 				<nav>
 					<ul>
 						<li class="current"><a href="#">Portfolio</a></li>
