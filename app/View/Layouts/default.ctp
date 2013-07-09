@@ -37,6 +37,10 @@
 	<?php echo $this->Html->css('style_default'); ?>
 
 	<link href='http://fonts.googleapis.com/css?family=Muli:300,400' rel='stylesheet' type='text/css'>
+	<?php echo $this->Html->script('jquery.min'); ?>
+	<?php echo $this->Html->script('jquery.maskedinput'); ?>
+	
+
 	
 </head>
 
@@ -75,6 +79,7 @@
 		<section>
 			<div>
 				<?php echo $this->fetch('content'); ?>
+				<div class="clear"></div>
 			</div>
 			<div class="clear"></div>
 		</section>
@@ -82,7 +87,81 @@
 
 
 		<footer>
-			<h3>Footer</h3>
+			<div class="line1">
+				<div class="centralizer">
+					<div class="channel_ft">
+						<h3>Central de Informações</h3>
+						<ul>
+							<li><a href="">Sobre a Ordenex</a></li>
+							<li><a href="">Como Comprar</a></li>
+							<li><a href="">Como Vender</a></li>
+							<li><a href="">Termo de uso & Privacidade</a></li>
+							<li><a href="">Sobre a Ordenex</a></li>
+							<li><a href="">Como Comprar</a></li>
+							<li><a href="">Como Vender</a></li>
+							<li><a href="">Termo de uso & Privacidade</a></li>
+						</ul>
+					</div>
+					<div class="channel_ft">
+						<h3>Ordenex na Prática</h3>
+						<ul>
+							<li><a href="">Cadastro de Compradores</a></li>
+							<li><a href="">Cadastro de Vendedores</a></li>
+							<li><a href="">Parceiros</a></li>
+							<li><a href="">Fale Conosco</a></li>
+							<li><a href="">Cadastro de Compradores</a></li>
+							<li><a href="">Cadastro de Vendedores</a></li>
+							<li><a href="">Parceiros</a></li>
+							<li><a href="">Fale Conosco</a></li>
+						</ul>
+					</div>
+					<div class="channel_ft">
+						<p>Compartilhe</p>
+						<ul class="midia_parce">
+							<li><a href="">
+								<img src="<?php echo $this->webroot;?>/img/facebook.png" width="40" /></a>
+							</li> 
+							<li><a href="">
+								<img src="<?php echo $this->webroot;?>/img/twitter.png" width="40" /></a>
+							</li> 
+							<li><a href="">
+								<img src="<?php echo $this->webroot;?>/img/youtube.png" width="40" /></a>
+							</li> 
+						</ul>
+						<p>Parceiros</p>
+						<ul class="midia_parce">
+							<li><a href="">
+								<img src="<?php echo $this->webroot;?>/img/ms_bizpark.png" width="100" /></a>
+							</li> 
+							<li><a href="">
+								<img src="<?php echo $this->webroot;?>/img/akatus_selo.png" width="100" /></a>
+							</li> 
+						</ul>
+					</div>
+				</div>
+			</div>
+			<div class="line2">
+				<div class="centralizer">
+					<div class="line_left">
+						<ul>
+							<li><a href=""><img src="<?php echo $this->webroot;?>/img/logo_rodape.png" width="70" /></a></li> 
+							<li><a href="">Design</a></li>
+							<li><a href="">MediaGraphic</a></li>
+							<li><a href="">DesignPrint</a></li>
+							<li><a href="">llustrationWeb</a></li>
+							<li><a href="">PortfolioI</a></li>
+						</ul>
+					</div>
+					<div class="line_right">
+
+					</div>
+				</div>	
+			</div>
+			<div class="line3">
+				<div class="centralizer">
+					<p id="copyright">© 2013 - Todos os Direitos Reservados à Ordenex</p>
+				</div>
+			</div>
 		</footer>
 		
 
