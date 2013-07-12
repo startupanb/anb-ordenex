@@ -9,21 +9,55 @@ $(document).ready(function(){
 	// 	$('#pessoa_fisica').fadeOut('fast');
 	// 	$('#pessoa_juridica').fadeOut('fast');
 	// }
-	$('#campo_fisica').click(function(){
-			$('#fisica_juridica').fadeOut('fast');
+	
 
-			$('#pessoa_fisica').fadeIn('fast');
-			$('#formularios').fadeIn('slow');
+	$('#alterar_form').click(function(){
+
+		var teste = $('#alterar_form').val();
+		if( teste == "Alterar para pessoa juridíca ( Empresa )")
+		{
+			cp_juridica();
+		}
+		else
+		{
+			cp_fisica();
+		}
 	});
+
+
+	$('#campo_fisica').click(function(){
+		cp_fisica();
+	});
+
+	function cp_fisica()
+	{
+		$('#fisica_juridica').fadeOut('fast');
+		$('#titulo').html("Cadastro Pessoa Física");
+		$('#alterar_form').val("Alterar para pessoa juridíca ( Empresa )");
+		$('#pessoa_juridica').fadeOut('fast');
+		$('#pessoa_fisica').fadeIn('fast');
+		$('#formularios').fadeIn('slow');
+	}
 
 	$('#campo_juridica').click(function(){
-			$('#fisica_juridica').fadeOut('fast');
-
-			$('#pessoa_juridica').fadeIn('fast');
-			$('#formularios').fadeIn('slow');
+		cp_juridica();			
 	});
 
-	
+	function cp_juridica()
+	{
+		$('#fisica_juridica').fadeOut('fast');
+		$('#titulo').html("Cadastro Empresa");
+		$('#alterar_form').val("Alterar para pessoa fisíca");
+		$('#pessoa_fisica').fadeOut('fast');
+		$('#pessoa_juridica').fadeIn('fast');
+		$('#formularios').fadeIn('slow');
+	}
+
+
+
+
+
+
 	$("#next").click(function(){
 			$("#form_full").animate({
 		    	left: "-=900px",
@@ -59,7 +93,7 @@ $(document).ready(function(){
 		    } else {
 		        element.mask("(99) 9999-9999?9");  
 		    }
-});
+	});
 	});
 
 });

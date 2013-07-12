@@ -39,6 +39,13 @@ $this->viewVars['requestJs'] = 'users/cadastro_vendedor';
 
 <div id="formularios" class="centralizer">
 
+
+<section>
+	<h2 id="titulo"></h2>
+	<input id="alterar_form" type="button" value="" />
+</section>
+
+
 <?php echo $this->Form->create('User'); ?>
 
 	<div id="form_view">
