@@ -53,7 +53,8 @@
 
 		<header>
 			<div class="centralizer">
-				<img src="<?php echo $this->webroot;?>/img/logo.png" />
+
+				<?php echo $this->Html->image('logo.png'); ?>
 				<nav>
 					<ul>
 						<li class="current"><a href="#">Portfolio</a></li>
@@ -119,22 +120,23 @@
 						<p>Compartilhe</p>
 						<ul class="midia_parce">
 							<li><a href="">
-								<img src="<?php echo $this->webroot;?>/img/facebook.png" width="40" /></a>
+												<?php echo $this->Html->image('facebook.png', array('width' => '40')); ?></a>
 							</li> 
 							<li><a href="">
-								<img src="<?php echo $this->webroot;?>/img/twitter.png" width="40" /></a>
+								<?php echo $this->Html->image('twitter.png', array('width' => '40')); ?></a>
 							</li> 
 							<li><a href="">
-								<img src="<?php echo $this->webroot;?>/img/youtube.png" width="40" /></a>
+								<?php echo $this->Html->image('youtube.png', array('width' => '40')); ?></a>
 							</li> 
 						</ul>
 						<p>Parceiros</p>
 						<ul class="midia_parce">
 							<li><a href="">
-								<img src="<?php echo $this->webroot;?>/img/ms_bizpark.png" width="100" /></a>
+<?php echo $this->Html->image('ms_bizpark.png', array('width' => '100')); ?></a>
 							</li> 
 							<li><a href="">
-								<img src="<?php echo $this->webroot;?>/img/akatus_selo.png" width="100" /></a>
+<?php echo $this->Html->image('akatus_selo.png', array('width' => '100')); ?>
+</a>
 							</li> 
 						</ul>
 					</div>
@@ -144,7 +146,7 @@
 				<div class="centralizer">
 					<div class="line_left">
 						<ul>
-							<li><a href=""><img src="<?php echo $this->webroot;?>/img/logo_rodape.png" width="70" /></a></li> 
+							<li><a href=""><?php echo $this->Html->image('logo_rodape.png', array('width' => '70')); ?></a></li> 
 							<li><a href="">Design</a></li>
 							<li><a href="">MediaGraphic</a></li>
 							<li><a href="">DesignPrint</a></li>

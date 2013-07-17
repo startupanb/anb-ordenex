@@ -10,7 +10,8 @@ $this->viewVars['requestJs'] = 'users/cadastro_vendedor';
 		<h1>Cadastro de Vendedor</h1>
 		<section class="box">
 			<figure>
-				<img src="<?php echo $this->webroot;?>/img/bussiness.png" width="56" height="48"/>
+			
+				<?php echo $this->Html->image('bussiness.png', array('width' => '56', 'height'=> '48')); ?>
 			</figure>
 			<div class="content_box">
 				<h3>Empresa <small>(Pessoa Jurídica)</small></h3>
@@ -23,7 +24,7 @@ $this->viewVars['requestJs'] = 'users/cadastro_vendedor';
 
 		<section class="box">
 			<figure>
-				<img src="<?php echo $this->webroot;?>/img/people.png" width="56"  />
+				<?php echo $this->Html->image('people.png', array('width' => '56')); ?>
 			</figure>
 			<div class="content_box">
 				<h3>Pessoa Física</h3>
