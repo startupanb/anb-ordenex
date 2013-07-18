@@ -14,6 +14,7 @@ $(document).ready(function(){
 
 			$('#pessoa_fisica').fadeIn('fast');
 			$('#formularios').fadeIn('slow');
+			$('#PessoaJuridicaPessoaFisicaJuridica').val('0');
 	});
 
 	$('#campo_juridica').click(function(){
@@ -21,6 +22,7 @@ $(document).ready(function(){
 
 			$('#pessoa_juridica').fadeIn('fast');
 			$('#formularios').fadeIn('slow');
+			$('#PessoaJuridicaPessoaFisicaJuridica').val('1');
 	});
 
 	

@@ -41,12 +41,14 @@ $this->viewVars['requestJs'] = 'users/cadastro_vendedor';
 <div id="formularios" class="centralizer">
 
 <?php echo $this->Form->create('User'); ?>
-
+	
 	<div id="form_view">
 		<div id="form_full">
 			<div class="form_blocos">
 
 				<!-- DIV PESSOA JURIDICA -->
+				
+				<?php echo $this->Form->hidden('PessoaJuridica.pessoa_fisica_juridica', array('value' => 'n')); ?>
 				<div class="divisao_campos">
 					<div id="pessoa_juridica">
 						<h4>Dados da Empresa</h4>
@@ -113,6 +115,12 @@ $this->viewVars['requestJs'] = 'users/cadastro_vendedor';
 						echo $this->Form->input('Vendedor.retirada_local', array('label' => 'Permite a retirada no local?', 'options' => $options, 'default' => 'n'));
 						echo $this->Form->input('Vendedor.segmentos_id', array('label' => 'Segmento de trabalho', 'options' => $segmentos, 'default' => 0));
 
+						
+					?>
+				</div>
+				<div class="divisao_campos">
+					<h4>Referências Comerciais</h4>
+					<?php  
 						echo $this->Form->input('Referencia.1.nome', array('type' => 'text'));
 						echo $this->Form->input('Referencia.1.telefone_comercial', array('
 							type' => 'text','class' => 'telefone'));
@@ -120,7 +128,6 @@ $this->viewVars['requestJs'] = 'users/cadastro_vendedor';
 						echo $this->Form->input('Referencia.2.telefone_comercial', array('type' => 'text','class' => 'telefone'));
 					?>
 				</div>
-
 			</div>
 		</div>
 	</div>
