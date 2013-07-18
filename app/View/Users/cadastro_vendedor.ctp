@@ -58,9 +58,9 @@ $this->viewVars['requestJs'] = 'users/cadastro_vendedor';
 						<h4>Dados da Empresa</h4>
 						<?php 
 							echo $this->Form->input('PessoaJuridica.cnpj', array('type' => 'text'));
-							echo $this->Form->input('PessoaJuridica.nome_fantasia<span> *</span>', array('type' => 'text'));
-							echo $this->Form->input('PessoaJuridica.responsavel<span> *</span>', array('type' => 'text'));
-							echo $this->Form->input('PessoaJuridica.razao_social<span> *</span>', array('type' => 'text'));
+							echo $this->Form->input('PessoaJuridica.nome_fantasia', array('type' => 'text'));
+							echo $this->Form->input('PessoaJuridica.responsavel', array('type' => 'text'));
+							echo $this->Form->input('PessoaJuridica.razao_social', array('type' => 'text'));
 						?>
 					</div>
 				</div>
@@ -117,7 +117,7 @@ $this->viewVars['requestJs'] = 'users/cadastro_vendedor';
 
 						echo $this->Form->input('Vendedor.loja_fisica', array('label' => 'Possui Loja Fisica?', 'options' => $options, 'default' => 'n'));
 						echo $this->Form->input('Vendedor.retirada_local', array('label' => 'Permite a retirada no local?', 'options' => $options, 'default' => 'n'));
-						echo $this->Form->input('Vendedor.segmentos_id', array('label' => 'Segmento de trabalho', 'options' => $segmentos, 'default' => 0));
+						echo $this->Form->input('Vendedor.segmentos_id', array('label' => 'Segmento de trabalho', 'options' => $segmentos, 'default' => 'n'));
 
 						echo $this->Form->input('Referencia.1.nome', array('type' => 'text'));
 						echo $this->Form->input('Referencia.1.telefone_comercial', array('
@@ -135,8 +135,8 @@ $this->viewVars['requestJs'] = 'users/cadastro_vendedor';
 
 <div id="botoes_form">
 	<input type="button" id="prev" value="Retornar ao 1º Passo <<">
-	<input type="button" id="next" value="Avançar para o 2º Passo >>" />
-	<input type="submit" id="enviar" value="Enviar">
+	<input type="button" id="next" value="Avançar >>" />
+	<input type="submit" id="enviar" value="Enviar" />
 	<div id="erro_preenchimento">
 		Existem campos obrigatórios ainda sem preenchimento!
 	</div>
