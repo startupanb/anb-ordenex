@@ -50,6 +50,11 @@
                         </div>
                     </div>
                 </div>
+                
+                <nav id="nav-arrows" class="nav-arrows">
+                    <span class="nav-arrow-prev">Previous</span>
+                    <span class="nav-arrow-next">Next</span>
+                </nav>
 
                 <nav id="nav-dots" class="nav-dots">
                     <span class="nav-dot-current"></span>
@@ -69,7 +74,7 @@
     <div class="centralizer">
         <div id="infograma">
             <figure>
-                <img src="<?php echo $this->webroot;?>/img/infograma.png" />
+                <img src="<?php echo $this->webroot;?>/img/infograma.png" width="900"/>
             </figure>
 
             <h1>Muito mais prático e rápido</h1>
@@ -169,3 +174,4 @@ $(document).ready(function(){
     });
 });
 </script>
+

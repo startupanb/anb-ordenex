@@ -52,6 +52,12 @@
 
 	<?php echo $this->fetch('meta'); ?>
 	
+
+
+<link href='http://fonts.googleapis.com/css?family=Muli:300,400' rel='stylesheet' type='text/css'>
+	<?php echo $this->Html->script('jquery.min'); ?>
+	<?php echo $this->Html->script('jquery.maskedinput'); ?>
+	<?php echo $this->Html->script('modernizr.custom.79639'); ?>
 	
 </head>
 
@@ -80,6 +86,11 @@
 			
 	<div id="divsepara"></div>
 	<!-- AQUI ELE CARREGA O FOOTER QUE TBM É UM ELEMENT -->
+	
+
+
+
+
 	<?php echo $this->element('footer'); ?>
 
 	<!-- AQUI O CAKE VAI RENDERIZAR OS JS -->
