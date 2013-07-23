@@ -1,3 +1,4 @@
+
 <!DOCTYPE html>
 <!--[if lt IE 7]>      <html class="no-js lt-ie9 lt-ie8 lt-ie7" lang="pt-BR"> <![endif]-->
 <!--[if IE 7]>         <html class="no-js lt-ie9 lt-ie8" lang="pt-BR"> <![endif]-->
@@ -35,13 +36,10 @@
 	<?php echo $this->element('header'); ?>
 
 	<?php echo $this->Html->css('style_default'); ?>
-	<?php echo $this->Html->css('custom'); ?>
-	<?php echo $this->Html->css('style'); ?>
 
 	<link href='http://fonts.googleapis.com/css?family=Muli:300,400' rel='stylesheet' type='text/css'>
 	<?php echo $this->Html->script('jquery.min'); ?>
 	<?php echo $this->Html->script('jquery.maskedinput'); ?>
-	<?php echo $this->Html->script('modernizr.custom.79639'); ?>
 	
 
 	
@@ -56,7 +54,8 @@
 
 		<header>
 			<div class="centralizer">
-				<img src="<?php echo $this->webroot;?>/img/logo.png" />
+
+				<?php echo $this->Html->image('logo.png'); ?>
 				<nav>
 					<ul>
 						<li class="current"><a href="#">Portfolio</a></li>
@@ -122,22 +121,23 @@
 						<p>Compartilhe</p>
 						<ul class="midia_parce">
 							<li><a href="">
-								<img src="<?php echo $this->webroot;?>/img/facebook.png" width="40" /></a>
+												<?php echo $this->Html->image('facebook.png', array('width' => '40')); ?></a>
 							</li> 
 							<li><a href="">
-								<img src="<?php echo $this->webroot;?>/img/twitter.png" width="40" /></a>
+								<?php echo $this->Html->image('twitter.png', array('width' => '40')); ?></a>
 							</li> 
 							<li><a href="">
-								<img src="<?php echo $this->webroot;?>/img/youtube.png" width="40" /></a>
+								<?php echo $this->Html->image('youtube.png', array('width' => '40')); ?></a>
 							</li> 
 						</ul>
 						<p>Parceiros</p>
 						<ul class="midia_parce">
 							<li><a href="">
-								<img src="<?php echo $this->webroot;?>/img/ms_bizpark.png" width="100" /></a>
+<?php echo $this->Html->image('ms_bizpark.png', array('width' => '100')); ?></a>
 							</li> 
 							<li><a href="">
-								<img src="<?php echo $this->webroot;?>/img/akatus_selo.png" width="100" /></a>
+<?php echo $this->Html->image('akatus_selo.png', array('width' => '100')); ?>
+</a>
 							</li> 
 						</ul>
 					</div>
@@ -147,7 +147,7 @@
 				<div class="centralizer">
 					<div class="line_left">
 						<ul>
-							<li><a href=""><img src="<?php echo $this->webroot;?>/img/logo_rodape.png" width="70" /></a></li> 
+							<li><a href=""><?php echo $this->Html->image('logo_rodape.png', array('width' => '70')); ?></a></li> 
 							<li><a href="">Design</a></li>
 							<li><a href="">MediaGraphic</a></li>
 							<li><a href="">DesignPrint</a></li>
@@ -172,74 +172,6 @@
 	<?php echo $this->element('footer'); ?>
 	<?php echo $this->fetch('script'); ?>
 	<?php echo $this->element('sql_dump'); ?>
-	<?php echo $this->Html->script('jquery.ba-cond.min'); ?>
-	<?php echo $this->Html->script('jquery.slitslider'); ?>
-	<script type="text/javascript">	
-			$(function() {
-			
-				var Page = (function() {
-
-					var $nav = $( '#nav-dots > span' ),
-						slitslider = $( '#slider' ).slitslider( {
-							onBeforeChange : function( slide, pos ) {
-
-								$nav.removeClass( 'nav-dot-current' );
-								$nav.eq( pos ).addClass( 'nav-dot-current' );
-
-							}
-						} ),
-
-						init = function() {
-
-							initEvents();
-							
-						},
-						initEvents = function() {
-
-							$nav.each( function( i ) {
-							
-								$( this ).on( 'click', function( event ) {
-									
-									var $dot = $( this );
-									
-									if( !slitslider.isActive() ) {
-
-										$nav.removeClass( 'nav-dot-current' );
-										$dot.addClass( 'nav-dot-current' );
-									
-									}
-									
-									slitslider.jump( i + 1 );
-									return false;
-								
-								} );
-								
-							} );
-
-						};
-
-						return { init : init };
-
-				})();
-
-				Page.init();
-
-				/**
-				 * Notes: 
-				 * 
-				 * example how to add items:
-				 */
-
-				/*
-				
-				var $items  = $('<div class="sl-slide sl-slide-color-2" data-orientation="horizontal" data-slice1-rotation="-5" data-slice2-rotation="10" data-slice1-scale="2" data-slice2-scale="1"><div class="sl-slide-inner bg-1"><div class="sl-deco" data-icon="t"></div><h2>some text</h2><blockquote><p>bla bla</p><cite>Margi Clarke</cite></blockquote></div></div>');
-				
-				// call the plugin's add method
-				ss.add($items);
-
-				*/
-			
-			});
-	</script>
 </body>
 </html>
+

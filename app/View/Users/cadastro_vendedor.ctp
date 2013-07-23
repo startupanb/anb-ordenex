@@ -1,3 +1,4 @@
+
 <?php 
 	// $this->Html->script('users/cadastro_vendedor'); 
 $this->viewVars['requestJs'] = 'users/cadastro_vendedor';
@@ -155,6 +156,3 @@ $this->viewVars['requestJs'] = 'users/cadastro_vendedor';
 		<p class="legend_p">Lorem ipsum dolor sit amet, consectetur adipisicing elit. Non, sed, placeat, facere velit aspernatur est magnam possimus ullam odio explicabo consequuntur eum deserunt recusandae maxime qui. Nostrum nihil enim libero!</p>
 	</div>
 </section>
-
-
-

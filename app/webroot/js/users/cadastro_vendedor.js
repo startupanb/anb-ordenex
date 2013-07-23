@@ -1,5 +1,6 @@
 $(document).ready(function(){
 
+
 	// VALIDAÇÃO //////////  VENDEDOR  ///////////////////////////
 		$("#next").css('display','none');
 		$("#enviar").css('display','none');
@@ -124,8 +125,13 @@ $(document).ready(function(){
 	// EXIBI FORM NA HOME ///////////////////////
 	$('#cadastrese').click(function(){
 		$('#form_cadastro').fadeIn('slow');
+
+
+			$('#PessoaJuridicaPessoaFisicaJuridica').val('0');
+
 	});
 	// EXIBI FORM NA HOME ///////////////////////
+
 
 
 
@@ -146,6 +152,9 @@ $(document).ready(function(){
 
 	$('#campo_fisica').click(function(){
 		cp_fisica();
+			
+			$('#PessoaJuridicaPessoaFisicaJuridica').val('1');
+
 	});
 
 	function cp_fisica()
