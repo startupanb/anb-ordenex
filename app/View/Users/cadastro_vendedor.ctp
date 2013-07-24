@@ -48,7 +48,7 @@ $this->viewVars['requestJs'] = 'users/cadastro_vendedor';
 
 
 <?php echo $this->Form->create('User'); ?>
-
+<?php echo $this->Form->hidden('User.pessoa_fisica_juridica', array('value' => '0')); ?>
 	<div id="form_view">
 		<div id="form_full">
 			<div class="form_blocos">

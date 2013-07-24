@@ -1,5 +1,32 @@
 $(document).ready(function(){
 
+	// PESQUISA POR CEP 
+
+	$('#UserCep').blur(function(){
+		if($.trim($("#UserCep").val()) != ""){
+            $.getScript("http://cep.republicavirtual.com.br/web_cep.php?formato=javascript&cep="+$("#UserCep").val(), function(){
+                if(resultadoCEP["resultado"] == 1){
+                    $("#UserLogradouro").val(unescape(resultadoCEP["tipo_logradouro"])+" "+unescape(resultadoCEP["logradouro"]));
+                    $("#UserBairro").val(unescape(resultadoCEP["bairro"]));
+                    $("#UserCidade").val(unescape(resultadoCEP["cidade"]));
+                    $("#UserUf").val(unescape(resultadoCEP["uf"]));
+                    $("#UserLogradouro").val($("#UserLogradouro").val());
+                    $("#UserNumero").focus();
+                }else{
+                    
+                    alert("Endereço não encontrado para o cep ");
+                }
+            });
+        }
+	});
+
+	//BLOQUEIA TAB NO ULTIMO CAMPO PARA IMPEDIR A QUEBRA DE TELA
+
+	$('#UserUf').keydown(function(e){
+		if(e.keyCode == 9){
+			return false
+		}
+	});
 
 	// VALIDAÇÃO //////////  VENDEDOR  ///////////////////////////
 		$("#next").css('display','none');
@@ -165,6 +192,7 @@ $(document).ready(function(){
 		$('#pessoa_juridica').fadeOut('fast');
 		$('#pessoa_fisica').fadeIn('fast');
 		$('#formularios').fadeIn('slow');
+		$('#UserPessoaFisicaJuridica').val('0');
 	}
 
 	$('#campo_juridica').click(function(){
@@ -179,6 +207,7 @@ $(document).ready(function(){
 		$('#pessoa_fisica').fadeOut('fast');
 		$('#pessoa_juridica').fadeIn('fast');
 		$('#formularios').fadeIn('slow');
+		$('#UserPessoaFisicaJuridica').val('1');
 	}
 	// ALTERA FORM PESSOA FISICA E JURIDICA ////////
 

@@ -1,6 +1,6 @@
 <?php 
 	// $this->Html->script('users/cadastro_vendedor'); 
-$this->viewVars['requestJs'] = 'users/cadastro_vendedor';
+$this->viewVars['requestJs'] = 'users/cadastro_comprador';
 
 ?>
 

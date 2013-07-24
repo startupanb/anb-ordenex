@@ -103,7 +103,7 @@ class UsersController extends AppController {
 	public function cadastro_vendedor(){
 		
 		if (!empty($this->request->data)) {
-			debug($this->data);
+			// debug($this->data);
 			#validação de usuário comum
 			$this->User->set($this->data);
 			if($this->User->validates()){
@@ -113,7 +113,7 @@ class UsersController extends AppController {
 				if($this->Vendedor->validates()){
 					if($this->data['User']['pessoa_fisica_juridica'] == 0){
 						
-						debug($this->data);			
+						// debug($this->data);			
 						#validação de pessoa fisica
 						$this->LoadModel('PessoaFisica');
 						$this->PessoaFisica->set($this->data);
@@ -143,7 +143,7 @@ class UsersController extends AppController {
 								}
 						}else{
 							#printa os erros de validação na tela, SEMPRE DEIXAR COMENTADO QUANDO NÂO ESTIVER EM USO!!
-							debug($this->PessoaFisica->validationErrors);
+							// debug($this->PessoaFisica->validationErrors);
 						}	
 					}else{
 		
@@ -204,7 +204,7 @@ class UsersController extends AppController {
 							
 						}else{
 							#printa os erros de validação na tela, SEMPRE DEIXAR COMENTADO QUANDO NÂO ESTIVER EM USO!!
-							debug($this->PessoaJuridica->validationErrors);
+							// debug($this->PessoaJuridica->validationErrors);
 							
 						}
 					}
@@ -229,8 +229,8 @@ class UsersController extends AppController {
 								$vendRef['VendedorReferencia']['referencias_id'] = $this->Referencia->id;
 								$this->VendedorReferencia->id = null;
 								if(!$this->VendedorReferencia->save($vendRef)){
-									debug($vendRef);
-									debug($this->VendedorReferencia->validationErrors);
+									// debug($vendRef);
+									// debug($this->VendedorReferencia->validationErrors);
 								}
 							}
 						}
@@ -239,12 +239,12 @@ class UsersController extends AppController {
 					
 				}else{
 					#printa os erros de validação na tela, SEMPRE DEIXAR COMENTADO QUANDO NÂO ESTIVER EM USO!!
-					debug($this->Vendedor->validationErrors);
+					// debug($this->Vendedor->validationErrors);
 
 				}
 			}else{
 				#printa os erros de validação na tela, SEMPRE DEIXAR COMENTADO QUANDO NÂO ESTIVER EM USO!!
-				debug($this->User->validationErrors);
+				// debug($this->User->validationErrors);
 			}
 		}
 
@@ -260,7 +260,7 @@ class UsersController extends AppController {
 		$c = array('conditions' => array('User.id' => 2));
 		//$this->User->contain('PessoaJuridica');
 		$t = $this->User->findContains();
-		debug($t);
+		// debug($t);
 	}
 
 	#Action que cadastra compradores
