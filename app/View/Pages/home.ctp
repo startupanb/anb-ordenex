@@ -67,9 +67,6 @@
         </div>                   
 </section>
 
-
-
-
 <section>
     <div class="centralizer">
         <div id="infograma">
@@ -93,7 +90,7 @@
         </div>
         <div id="form_cadastro">
             
-            <p>Digite seus dados:</p>
+            <p>Digite seus dados</p>
 
             <?php 
                 echo $this->Form->create('User');
