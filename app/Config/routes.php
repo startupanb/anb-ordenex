@@ -28,6 +28,7 @@
  */
 	Router::connect('/', array('controller' => 'pages', 'action' => 'display', 'home'));
 	Router::connect('/cadastre-se-vendedor', array('controller' => 'users', 'action' => 'cadastro_vendedor'));
+	Router::connect('/cadastre-se-comprador', array('controller' => 'users', 'action' => 'cadastro_comprador'));
 /**
  * ...and connect the rest of 'Pages' controller's urls.
  */
