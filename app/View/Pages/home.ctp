@@ -7,8 +7,18 @@
                     <div class="sl-slide" data-orientation="horizontal" data-slice1-rotation="-25" data-slice2-rotation="-25" data-slice1-scale="2" data-slice2-scale="2">
                         <div class="sl-slide-inner">
                             <div class="bg-img bg-img-1"></div>
-                            <h2>A bene placito.</h2>
-                            <blockquote><p>You have just dined, and however scrupulously the slaughterhouse is concealed in the graceful distance of miles, there is complicity.</p>
+                            <h2>Ordenex & Akatus</h2>
+                            <blockquote><p>O que era facil de se comprar, agora é facíl e seguro de se pagar
+
+<!--                             <ul>
+                                <li></li>
+                                <li></li>
+                                <li></li>
+                                <li></li>
+                                <li></li>
+                            </ul> -->
+
+                            </p>
                             <p><a href="#">Veja mais...</a></p>
                             </blockquote>
                         </div>
@@ -17,13 +27,13 @@
                     <div class="sl-slide" data-orientation="vertical" data-slice1-rotation="10" data-slice2-rotation="-15" data-slice1-scale="1.5" data-slice2-scale="1.5">
                         <div class="sl-slide-inner">
                             <div class="bg-img bg-img-2"></div>
-                            <h2>Regula aurea.</h2>
-                            <blockquote><p>Until he extends the circle of his compassion to all living things, man will not himself find peace.</p><p><a href="#">Veja mais...</a></p>
+                            <h2>Ordenex</h2>
+                            <blockquote><p>O jeito mais prático, rápido e direto para você comprar seus produtos ou serviços.</p><p><a href="#" id="bot_orc">Solicite um orçamento</a></p>
                             </blockquote>
                         </div>
                     </div>
                     
-                    <div class="sl-slide" data-orientation="horizontal" data-slice1-rotation="3" data-slice2-rotation="3" data-slice1-scale="2" data-slice2-scale="1">
+<!--                     <div class="sl-slide" data-orientation="horizontal" data-slice1-rotation="3" data-slice2-rotation="3" data-slice1-scale="2" data-slice2-scale="1">
                         <div class="sl-slide-inner">
                             <div class="bg-img bg-img-3"></div>
                             <h2>Dum spiro, spero.</h2>
@@ -48,7 +58,7 @@
                             <blockquote><p>I think if you want to eat more meat you should kill it yourself and eat it raw so that you are not blinded by the hypocrisy of having it processed for you.</p><p><a href="#">Veja mais...</a></p>
                             </blockquote>
                         </div>
-                    </div>
+                    </div> -->
                 </div>
                 
                 <nav id="nav-arrows" class="nav-arrows">
@@ -59,9 +69,9 @@
                 <nav id="nav-dots" class="nav-dots">
                     <span class="nav-dot-current"></span>
                     <span></span>
+<!--                     <span></span>
                     <span></span>
-                    <span></span>
-                    <span></span>
+                    <span></span> -->
                 </nav>
             </div>
         </div>                   
