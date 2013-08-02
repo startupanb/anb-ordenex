@@ -7,8 +7,8 @@
                     <div class="sl-slide" data-orientation="horizontal" data-slice1-rotation="-25" data-slice2-rotation="-25" data-slice1-scale="2" data-slice2-scale="2">
                         <div class="sl-slide-inner">
                             <div class="bg-img bg-img-1"></div>
-                            <h2>Ordenex & Akatus</h2>
-                            <blockquote><p>O que era facil de se comprar, agora é facíl e seguro de se pagar
+                            <h2>Podemos ajudar?</h2>
+                            <blockquote><p>Se você esta procurando algum Produto ou Serviço e não tem tempo ou paciência de ficar  procurando, não se preocupe, procuramos para você!
 
 <!--                             <ul>
                                 <li></li>
@@ -19,7 +19,7 @@
                             </ul> -->
 
                             </p>
-                            <p><a href="#">Veja mais...</a></p>
+                            <p><a href="#" id="bot_orc">Solicite um orçamento</a></p>
                             </blockquote>
                         </div>
                     </div>
@@ -27,21 +27,21 @@
                     <div class="sl-slide" data-orientation="vertical" data-slice1-rotation="10" data-slice2-rotation="-15" data-slice1-scale="1.5" data-slice2-scale="1.5">
                         <div class="sl-slide-inner">
                             <div class="bg-img bg-img-2"></div>
-                            <h2>Ordenex</h2>
+                            <h2>Ordenext</h2>
                             <blockquote><p>O jeito mais prático, rápido e direto para você comprar seus produtos ou serviços.</p><p><a href="#" id="bot_orc">Solicite um orçamento</a></p>
                             </blockquote>
                         </div>
                     </div>
                     
-<!--                     <div class="sl-slide" data-orientation="horizontal" data-slice1-rotation="3" data-slice2-rotation="3" data-slice1-scale="2" data-slice2-scale="1">
+                    <div class="sl-slide" data-orientation="horizontal" data-slice1-rotation="3" data-slice2-rotation="3" data-slice1-scale="2" data-slice2-scale="1">
                         <div class="sl-slide-inner">
                             <div class="bg-img bg-img-3"></div>
-                            <h2>Dum spiro, spero.</h2>
-                            <blockquote><p>Thousands of people who say they 'love' animals sit down once or twice a day to enjoy the flesh of creatures who have been utterly deprived of everything that could make their lives worth living and who endured the awful suffering and the terror of the abattoirs.</p><p><a href="#">Veja mais...</a></p>
+                            <h2>Ordenext & Akatus</h2>
+                            <blockquote><p>O que era rápido de se comprar, agora é facíl e seguro de se pagar.</p><p><a href="#">Veja mais...</a></p>
                             </blockquote>
                         </div>
                     </div>
-                    
+<!--                     
                     <div class="sl-slide" data-orientation="vertical" data-slice1-rotation="-5" data-slice2-rotation="25" data-slice1-scale="2" data-slice2-scale="1">
                         <div class="sl-slide-inner">
                             <div class="bg-img bg-img-4"></div>
@@ -69,8 +69,8 @@
                 <nav id="nav-dots" class="nav-dots">
                     <span class="nav-dot-current"></span>
                     <span></span>
-<!--                     <span></span>
                     <span></span>
+  <!--              <span></span>
                     <span></span> -->
                 </nav>
             </div>
@@ -80,72 +80,82 @@
 <section>
     <div class="centralizer">
         <div id="infograma">
+            <h1>Como Funciona:</h1>
             <figure>
-                <img src="<?php echo $this->webroot;?>/img/infograma.png" width="900"/>
+                <img src="../../img/infograma.png" width="900"/>
             </figure>
 
-            <h1>Muito mais prático e rápido</h1>
-            <p>Com ordenex em menos 2 minuto você pode solicitar um produto , serviço ou mesmo serviços expressos e mais. O sistema alerta os vendedores ou prestadores de serviço cadastrados que te retornam o orçamento , sem você ficar tempo procurando de site em site.</p>
-        </div>
-    </div>
-</section>
+            <div class="clear"></div>
 
-<section>
-    <div class="centralizer">
+            <div id="celular_sorteio">
+                <h4>Com Ordenex você encontra o que você procura e ainda pode em breve concorrer a um lindo Celular!</h4>
+                <img src="../../img/galazy.jpg" width="300" />
+                <div class="clear"></div>
+            </div>
 
-        <div id="celular_sorteio">
-            <h4>Com Ordenex você encontra o que você procura e ainda pode em breve concorrer a um lindo Celular!</h4>
-            <img src="<?php echo $this->webroot;?>/img/galazy.jpg" width="300" />
+            <div id="form_cadastro">
+                
+                <p>Digite seus dados</p>
+
+                <?php 
+                    echo $this->Form->create('User');
+                    echo $this->Form->input('PessoaJuridica.nome', array('type' => 'text'));
+                    echo $this->Form->input('PessoaJuridica.sobrenome', array('type' => 'text'));
+                    echo $this->Form->input('PessoaJuridica.Email', array('type' => 'text'));
+                    echo $this->Form->input('PessoaJuridica.Repetir Email', array('type' => 'text'));
+                    echo $this->Form->input('PessoaJuridica.Senha', array('type' => 'text'));
+                    echo $this->Form->input('PessoaJuridica.Data de Nascimento', array('type' => 'text'));
+
+
+                    $options = array('M' => 'Masculino', 'F' => 'Feminino');
+                    $attributes = array('legend' => 'Sexo:');
+                    echo $this->Form->radio('Sexo', $options, $attributes);
+
+                    echo '<input type="submit" value="Cadastrar" id="cadastrese"> ';
+
+                    echo $this->Form->end(); 
+                ?>
+                
+            </div>
             <div class="clear"></div>
         </div>
-        <div id="form_cadastro">
-            
-            <p>Digite seus dados</p>
-
-            <?php 
-                echo $this->Form->create('User');
-                echo $this->Form->input('PessoaJuridica.nome', array('type' => 'text'));
-                echo $this->Form->input('PessoaJuridica.sobrenome', array('type' => 'text'));
-                echo $this->Form->input('PessoaJuridica.Email', array('type' => 'text'));
-                echo $this->Form->input('PessoaJuridica.Repetir Email', array('type' => 'text'));
-                echo $this->Form->input('PessoaJuridica.Senha', array('type' => 'text'));
-                echo $this->Form->input('PessoaJuridica.Data de Nascimento', array('type' => 'text'));
-                echo $this->Form->end(); 
-            ?>
-            <div class="clear"></div>
-        </div>
-
-<div class="clear"></div>
-        <a id="cadastrese">Cadastre-se agora mesmo</a>
+        <div class="clear"></div>
     </div>
 </section>
-
 
 <section>
     <div class="centralizer separador">
     </div>
 </section>
 
-
 <section>
+    <div class="centralizer">
+        <div id="infograma">
+            <h1>Muito mais prático e rápido</h1>
+            <p>Com ordenex em menos 2 minuto você pode solicitar um produto , serviço ou mesmo serviços expressos e mais. O sistema alerta os vendedores ou prestadores de serviço cadastrados que te retornam o orçamento , sem você ficar tempo procurando de site em site.</p>
+        </div>
+    </div>
+</section>
+
+<!-- <section>
     <div class="centralizer linha_divisa">
         <div id="infograma">
             <h1>Serviço Expresso</h1>
             <p>Aposto que você ja precisou de um MOTOBOY, TAXI, FLORICULTURA, DIARISTA e outros profissionais em uma emergência e perdeu um tempão para encontrar. O Serviço Expresso do Ordenex é uma ferramenta faz isso para você , em um clique o sistema procura o prestador de serviço mais próximo de você e te informa os que estão disponiveis para te atender na hora marcada.</p>
         </div>
     </div>
-</section>
+</section> -->
 
 
 
 
 
-<section>
+<!-- <section>
     <div class="centralizer">
         <div id="linha_channel">
             <div class="channel">
                 <figure>
-                    <img src="<?php echo $this->webroot;?>/img/channel-icon.png" width="100" />
+                    <img src="<?php echo $this->webroot;?>/img/channel-icon-1.png" width="100" />
                 </figure>
                 <h4>Lorem inpsum indolor</h4>
                 <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Harum sequi tenetur ut minima quod ducimus saepe rem. </p>
@@ -153,31 +163,28 @@
             </div>
             <div class="channel">
                 <figure>
-                    <img src="<?php echo $this->webroot;?>/img/channel-icon.png" width="100" />
+                    <img src="<?php echo $this->webroot;?>/img/channel-icon-2.png" width="100" />
                 </figure>
-                <h4>Lorem inpsum indolor</h4>
-                <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Harum sequi tenetur ut minima quod ducimus saepe rem. </p>
+                <h4><span>Velocidade</span> e praticidade em suas compras</h4>
+                <p>Ordenex é a maneira mais rapida e prática de fazer compras de produtos e serviços na internet, experimente você também.</p>
                 <a href="#">lorem inp...</a>
             </div>
             <div class="channel">
                 <figure>
-                    <img src="<?php echo $this->webroot;?>/img/channel-icon.png" width="100" />
+                    <img src="<?php echo $this->webroot;?>/img/channel-icon-3.png" width="100" />
                 </figure>
-                <h4>Lorem inpsum indolor</h4>
-                <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Harum sequi tenetur ut minima quod ducimus saepe rem. </p>
+                <h4>Mais <span>segurança</span> em suas <span>compras</span></h4>
+                <p>Junte-se a milhares de internautas, e tenha total segurança em suas comrpas através do sistema akatus de pagamento</p>
                 <a href="#">lorem inp...</a>
             </div>
         </div>
     </div>
-</section>
+</section> -->
 
 <script>
 $(document).ready(function(){
+      
 
-    $('#cadastrese').click(function(){
-        $('#form_cadastro').fadeIn('slow');
-        $('#celular_sorteio').fadeIn('slow');
-        
     });
 });
 </script>

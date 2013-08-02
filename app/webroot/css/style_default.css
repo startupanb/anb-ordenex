@@ -5,13 +5,13 @@ a:hover{-htm-transition-duration:1s;-moz-transition-duration:1s;-o-transition-du
 
 header,footer,section{display: block; width: 100%; }
 
-header{ display: block; float: left; width: 100%; background: #111; box-shadow: 0 0 10px 0 #555; position: relative; z-index: 99; }
+header{ display: block; float: left; width: 100%; background: #222; box-shadow: 0 0 10px 0 #555; position: relative; z-index: 99; border-top:3px solid #49943E;}
 header img{ float: left; margin: 10px;}
 header nav{ display: block; float: right; margin-top: 30px;}
 header nav ul{}
 header nav ul li{ display: block; float: left;}
 header nav ul li a{color: #fff; margin-left: 10px; text-decoration: none;}
-header nav ul li a:hover{ color:#49943E }
+header nav ul li a:hover{ color:#49943E ; text-decoration: none;}
 
 
 /*#alterar_form{ display: block; float: right;}*/
@@ -61,18 +61,26 @@ input[type="button"]:hover,,input[type="submit"]:hover{ color: #000; box-shadow:
 #infograma p{ color: #686C6C; font-size: 18px; display: block; text-align: center; font-weight: bold; margin-bottom: 25px;}
 
 
-a#cadastrese{display: block; width: 280px; padding: 25px 0; margin: 0 auto; background: url(../img/botao.png) top center no-repeat; color: #fff; text-decoration: none; font-weight: bold; text-align: center; text-transform: uppercase; font-size: 15px; cursor: pointer;}
-a#cadastrese:hover{background: url(../img/botao_r.png) top center no-repeat;}
+#cadastrese{display: block; width: 280px; padding: 25px 0; margin: 0 auto; background: url(../img/botao.png) top center no-repeat!important; color: #fff; text-decoration: none; font-weight: bold; text-align: center; text-transform: uppercase; font-size: 15px; cursor: pointer; border: none; box-shadow: none;}
+#cadastrese:hover{background: url(../img/botao_r.png) top center no-repeat;}
 
-#form_cadastro{ display: none; float: right; width: 400px; padding: 20px 0; border-radius: 15px; padding: 5px; box-shadow: 0px 0px 17px -4px;}
-#form_cadastro p{ display: block; text-align: center; font-size: 16px; margin: 6px 0 28px; color:#49943E; font-weight: bold;}
+
+#form_cadastro{ float: right; width: 400px; padding: 20px 0; border-radius: 15px; padding: 5px; box-shadow: 0px 0px 17px -4px; margin-top: 50px}
+#form_cadastro p{ display: block; text-align: center; font-size: 24px; margin: 19px 0 28px; color:#49943E; font-weight: bold;}
 #form_cadastro .input{ display: block;}
 #form_cadastro label{display: block; width: 155px; text-align: right; float: left; margin-right: 10px; /*margin-bottom: 12px;*/ color: #686C6C; padding-top: 5px;}
-#form_cadastro input{ display: block; width: 200px; text-align: left; float: left; border-radius: 3px; background: none; border: 1px solid #ccc; height: 25px; margin-bottom: 10px;}
+#form_cadastro input{ display: block; width: 200px; text-align: left; float: left; border-radius: 3px; background: #95FF86; border: 1px solid #ccc; height: 25px; margin-bottom: 10px;}
 
 
-#celular_sorteio{ display: none; float: left; width: 400px;}
-#celular_sorteio h4{ display: block; width: 100%; text-align: justify; font-size: 18px; color: #49943E; font-weight: bold; margin-bottom: 15px;}
+#form_cadastro legend{ width: 150px; display: block; float: left; text-align: right; padding-top: 15px; color: #686C6C; margin-right: 9px;}
+#form_cadastro input[type='radio']{ width: 15px; margin-top: 8px; margin-right: 2px;}
+#form_cadastro fieldset label{ width: 88px; display: block; margin-top: 9px; text-align: left;}
+#form_cadastro input[type="submit"]{ margin-left: 50px; padding: 0; margin: 0; border: none; width: 150px; padding: 14px 25px; height: 38px; margin-left: 120px; margin-top: 10px; margin-bottom: 15px;}
+#form_cadastro input[type="submit"]:hover{background: url(../img/botao_r.png) top center no-repeat;}
+
+
+#celular_sorteio{ float: left; width: 400px; margin-top: 50px;}
+#celular_sorteio h4{ display: block; width: 100%; text-align: center; font-size: 19px; color: #49943E; font-weight: bold; margin-bottom: 15px; line-height: 25px;}
 #celular_sorteio img{ margin: 0 auto; display: block; margin-bottom: 20px;}
 
 /*#infograma #form_cadastro .input{}
@@ -81,9 +89,13 @@ a#cadastrese:hover{background: url(../img/botao_r.png) top center no-repeat;}
 
 #linha_channel{ border-top: 1px solid #ddd;}
 #linha_channel hr{ margin-bottom: 20px; border-bottom:1px solid #eee; background: #ccc;}
-#linha_channel .channel{ display: block; float: left; width: 300px; padding:50px 0;}
-#linha_channel .channel figure{ display: block; width: 100%; text-align: center;}
-#linha_channel .channel h4{ font-size: 30px; color: #686C6C; display: block; text-align: center; margin-bottom: 5px;}
+#linha_channel .channel{ display: block; float: left; width: 270px; padding:50px 0;}
+
+#linha_channel .channel:nth-child(2){ margin: 20px 0; margin: 0 45px;}
+
+#linha_channel .channel figure{ display: block; width: 100%; text-align: center; margin-bottom: 18px;}
+#linha_channel .channel h4{ font-size: 24px; color: #686C6C; display: block; text-align: center; margin-bottom: 8px;}
+#linha_channel .channel h4 span{ color: #49943E;}
 #linha_channel .channel p{ display: block; font-size: 16px; color: #222; text-align: center; font-weight: 300; margin-bottom: 8px;}
 #linha_channel .channel a{ display: block; text-align: right; color: #49943E; font-weight: bold;}
 
