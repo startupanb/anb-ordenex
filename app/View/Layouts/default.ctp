@@ -40,7 +40,7 @@
 	<link href='http://fonts.googleapis.com/css?family=Muli:300,400' rel='stylesheet' type='text/css'>
 	<?php echo $this->Html->script('jquery.min'); ?>
 	<?php echo $this->Html->script('jquery.maskedinput'); ?>
-		<?php echo $this->Html->script('modernizr.custom.79639'); ?>
+	<?php echo $this->Html->script('modernizr.custom.79639'); ?>
 	
 
 	
@@ -122,7 +122,7 @@
 						<p>Compartilhe</p>
 						<ul class="midia_parce">
 							<li><a href="">
-												<?php echo $this->Html->image('facebook.png', array('width' => '40')); ?></a>
+								<?php echo $this->Html->image('facebook.png', array('width' => '40')); ?></a>
 							</li> 
 							<li><a href="">
 								<?php echo $this->Html->image('twitter.png', array('width' => '40')); ?></a>
@@ -246,6 +246,36 @@
 			});
 	</script>
 	
+	
+	<script type="text/javascript">
+	
+
+
+
+		$('#bot_orc').click(function(){
+			$('#form_float').fadeIn("fast");
+			$('#float').fadeIn("slow");
+		});
+
+		$('#form_float').click(function(){
+			$('#form_float').fadeOut("slow");
+			$('#float').fadeOut("slow");
+		});
+
+		$('#close').click(function(){
+			$('#form_float').fadeOut("slow");
+			$('#float').fadeOut("slow");
+		});
+
+
+
+
+	</script>
+	
+
+
+
+
 	<?php echo $this->element('footer'); ?>
 	<?php echo $this->fetch('script'); ?>
 	<?php //echo $this->element('sql_dump'); ?>

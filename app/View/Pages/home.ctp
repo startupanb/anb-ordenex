@@ -1,4 +1,58 @@
 
+
+<form id="float" action="">
+
+    <?php echo $this->Html->image('close.jpg', array('id' => 'close')); ?>
+
+    <h3>Solicite Orçamento Grátis</h3>
+
+    <div class="celula_form">
+        <label for="">Titulo:</label>
+        <input type="text" name="" value="Ex.: Quero notebook AMD, com HD de 1TB">
+    </div>
+    
+    <div class="celula_form">
+        <label for="">Descrição:</label>
+        <textarea name="" id="" cols="30" rows="10" >Ex.: Quero notebook AMD, com HD de 1TB da marca Positivo</textarea>
+    </div>
+
+    <div class="celula_form">
+        
+        <label class="radio">
+            <input type="radio" value="" name="tipo">
+            Produtos
+        </label>
+
+        <label class="radio">
+            <input type="radio" value="" name="tipo">
+            Serviços
+        </label>
+
+        <div class="clear"></div>
+    </div>
+
+    <div class="celula_form">
+        <label for="">Tags / Categorias:</label>
+        <input type="text" name="" value="Ex.: Informática, notebook, loja de informática">
+    </div>
+
+    <div class="celula_form">
+        <label for="">Valor médio investido no produto:</label>
+        <input type="text" name="" value="Ex.: R$ 999,99">
+    </div>
+    
+    <div class="celula_form">
+        <input type="submit" value="Solicitar Agora">
+    </div>
+</form>
+
+<div id="form_float">
+</div>
+
+
+
+
+
 <section>
         <div class="container demo-2">
             <div id="slider" class="sl-slider-wrapper">
@@ -82,7 +136,8 @@
         <div id="infograma">
             <h1>Como Funciona:</h1>
             <figure>
-                <img src="../../img/infograma.png" width="900"/>
+                <?php echo $this->Html->image('infograma.png', array('width' => '900')); ?>
+                <!-- <img src="../../img/infograma.png" width="900"/> -->
             </figure>
 
             <div class="clear"></div>
