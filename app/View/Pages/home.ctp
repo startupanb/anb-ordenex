@@ -19,24 +19,29 @@
     <div class="celula_form">
         
         <label class="radio">
-            <input type="radio" value="" name="tipo">
+            <input type="radio" value="produtos" name="tipo" class="radio_change">
             Produtos
         </label>
 
         <label class="radio">
-            <input type="radio" value="" name="tipo">
+            <input type="radio" value="servicos" name="tipo" class="radio_change">
             Serviços
         </label>
 
         <div class="clear"></div>
     </div>
 
+
+    <div id="hidden_celula" class="celula_form">
+    </div>
+
+
     <div class="celula_form">
         <label for="">Tags / Categorias:</label>
         <input type="text" name="" value="Ex.: Informática, notebook, loja de informática">
     </div>
 
-    <div class="celula_form">
+    <div class="celula_form" id="hidden_campo">
         <label for="">Valor médio investido no produto:</label>
         <input type="text" name="" value="Ex.: R$ 999,99">
     </div>
@@ -160,7 +165,10 @@
                     echo $this->Form->input('PessoaJuridica.Repetir Email', array('type' => 'text'));
                     echo $this->Form->input('PessoaJuridica.Senha', array('type' => 'text'));
                     echo $this->Form->input('PessoaJuridica.Data de Nascimento', array('type' => 'text'));
-
+                        
+                ?>
+                    <div class="clear"></div>
+                <?php 
 
                     $options = array('M' => 'Masculino', 'F' => 'Feminino');
                     $attributes = array('legend' => 'Sexo:');

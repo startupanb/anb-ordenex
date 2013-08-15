@@ -249,9 +249,6 @@
 	
 	<script type="text/javascript">
 	
-
-
-
 		$('#bot_orc').click(function(){
 			$('#form_float').fadeIn("fast");
 			$('#float').fadeIn("slow");
@@ -267,6 +264,38 @@
 			$('#float').fadeOut("slow");
 		});
 
+
+
+		$("input[name='tipo']").change(function(){
+
+			var teste = $(this).val();
+			
+			if( teste == 'produtos')
+			{
+				
+				$('#hidden_celula').html('<label class="radio  hidden_label"><input type="radio" value="usados" name="tipo" class="radio_change" id="radio_disable1"> Usados</label><label class="radio  hidden_label"><input type="radio" value="novos" name="tipo" class="radio_change" id="radio_disable2"> Novos</label><label class="radio"><span> - Em breve</span></label><div class="clear"></div>');
+					document.getElementById("radio_disable1").disabled=true;
+					document.getElementById("radio_disable2").disabled=true;
+
+				$('#hidden_campo').html('<label for="">Valor médio investido no produto:</label><input type="text" name="valor-inves" value="Ex.: R$ 999,99">');
+
+
+			}
+			else
+			{
+
+				$('#hidden_celula').html('<label class="radio  hidden_label expres"><input type="radio" value="serv-exp" name="tipo" class="radio_change" id="radio_disable1"> Serviços Expressos</label><label class="radio"><span> - Em breve</span></label><div class="clear"></div>');
+					document.getElementById("radio_disable1").disabled=true;
+
+				$('#hidden_campo').html('<label for="">CEP do local do atendimento:</label><input type="text" name="cep" value="Ex.: 11721-100">'	);
+
+
+
+			}
+
+		});
+
+		
 
 
 
